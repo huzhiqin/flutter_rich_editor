@@ -1,5 +1,6 @@
 # ✨ rich_editor
 【根据业务自定义修改源库】
+
 [![pub package](https://img.shields.io/pub/v/rich_editor.svg)](https://pub.dartlang.org/packages/rich_editor)
 [![pub points](https://badges.bar/rich_editor/pub%20points)](https://pub.dev/packages/rich_editor/score)
 
