@@ -434,6 +434,28 @@ var editor = {
        }
     },
 
+    insertTopic: function(url, title) {
+        this._restoreRange();
+        var sel = document.getSelection();
+
+        if (sel.toString().length == 0) {
+            this._insertHtml("<a href='"+url+"' class='topic'>"+title+"</a>");
+        }
+        else if (sel.rangeCount) {
+           var el = document.createElement("a");
+           el.setAttribute("href", url);
+           el.setAttribute("title", title);
+           el.setAttribute("class", "topic");
+
+           var range = sel.getRangeAt(0).cloneRange();
+           range.surroundContents(el);
+           sel.removeAllRanges();
+           sel.addRange(range);
+
+           this._updateEditorState();
+       }
+    },
+
     insertImage: function(url, alt, width, height, rotation) {
         var imageElement = document.createElement('img');
 
@@ -585,7 +607,7 @@ var editor = {
         this._textField.contentEditable = String(inputEnabled);
 
         if(inputEnabled) { // TODO: may interferes with _isImageResizingEnabled
-            this.makeImagesResizeable();
+            // this.makeImagesResizeable();
         }
         else {
             this.disableImageResizing();

@@ -216,6 +216,11 @@ class JavascriptExecutorBase {
     await executeJavascript("insertLink('$url', '$title');");
   }
 
+  // 插入话题
+  insertTopic(String url, String title) async {
+    await executeJavascript("insertTopic('$url', '$title');");
+  }
+
   /// The rotation parameter is used to signal that the image is rotated and should be rotated by CSS by given value.
   /// Rotation can be one of the following values: 0, 90, 180, 270.
   insertImage(String url,
@@ -302,6 +307,10 @@ class JavascriptExecutorBase {
   /// Set a default editor text font family
   setBaseFontFamily(String fontFamily) async {
     await executeJavascript("setBaseFontFamily('$fontFamily');");
+  }
+
+  setBaseFontSize(double fontSize) async {
+    await executeJavascript("setBaseFontSize('$fontSize');");
   }
 
   /// Add padding to the editor's content

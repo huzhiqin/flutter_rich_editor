@@ -34,6 +34,7 @@ enum CommandName {
   INSERTHORIZONTALRULE,
   INSERTHTML, // determines if the three command below are executable
   INSERTLINK, // pseudo commands, there are no corresponding values for execCommand()
+  INSERTTOPIC, // 插入话题
   INSERTIMAGE,
   INSERTCHECKBOX,
 // pseudo commands for toggling grouped command views

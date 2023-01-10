@@ -162,6 +162,8 @@ class RichEditorState extends State<RichEditor> {
     if (widget.editorOptions!.baseFontFamily != null)
       await javascriptExecutor
           .setBaseFontFamily(widget.editorOptions!.baseFontFamily!);
+    if (widget.editorOptions!.fontSize != null)
+      await javascriptExecutor.setBaseFontSize(widget.editorOptions!.fontSize!);
   }
 
   _addJSListener() async {
