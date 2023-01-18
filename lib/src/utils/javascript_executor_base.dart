@@ -230,7 +230,7 @@ class JavascriptExecutorBase {
     if (height == null) height = 300;
     if (alt == null) alt = '';
     await executeJavascript(
-      "insertImage('$url', '$alt', '$width', '$height', $rotation);",
+      "insertImage('$url', '$alt', '${width>0?width:"auto"}', '${height>0?height:"auto"}', $rotation);",
     );
   }
 
