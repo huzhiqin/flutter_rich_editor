@@ -10,7 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_inappwebview: ^5.7.1+2
+  # flutter_inappwebview: ^5.7.1+2
+  flutter_inappwebview: ^6.0.0-beta.22
   mime: ^1.0.0
   image_picker: ^0.8.3+1
   # flutter_widget_from_html_core: ^0.8.5+3
