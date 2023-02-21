@@ -66,6 +66,8 @@ class JavascriptExecutorBase {
   /// Get current HTML data from Editor
   getCurrentHtml() async {
     String? html = await executeJavascript('getEncodedHtml();');
+    // 改为透明
+    html = html?.replaceAll('rgb(250, 250, 250)', 'transparent');
     String? decodedHtml = decodeHtml(html!);
     if (decodedHtml!.startsWith('"') && decodedHtml.endsWith('"')) {
       decodedHtml = decodedHtml.substring(1, decodedHtml.length - 1);
