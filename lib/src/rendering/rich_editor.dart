@@ -178,6 +178,8 @@ class RichEditorState extends State<RichEditor> {
   Future<String?> getHtml() async {
     try {
       html = await javascriptExecutor.getCurrentHtml();
+      // 改为透明
+      html = html.replaceAll('rgb(250, 250, 250)', 'transparent');
     } catch (e) {}
     return html;
   }
